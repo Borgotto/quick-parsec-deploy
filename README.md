@@ -1,14 +1,14 @@
 # quick-parsec-deploy
 
 
-It's a simple Windows PowerShell script to download and run the latest portable version of
+A simple Windows PowerShell script to download and run the latest portable version of
 <a href="https://parsec.app/downloads">Parsec <img src="https://imgur.com/3QEwVvy.png" width=20 height=20></a>
- on any Windows 10/11 computer
+ on any Windows 10/11 computer with a single command
  ##
 
 
 ### usage:
-clone this repository, open it in PowerShell (5.1 or greater), and run
+clone this repository, open PowerShell (5.1 or greater), and run
 ```powershell
 qpd.ps1 [[-ConfigFile] <string>] [[-LoginFile] <string>] [[-Dir] <string>] [[-OutFolder] <string>]
 ```
