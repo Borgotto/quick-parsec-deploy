@@ -1,0 +1,6 @@
+encoder_bitrate = 15
+host_name = Pizza
+server_admin_mute = 0
+host_exclusive_input = 1
+host_audio_cancel = 0
+encoder_min_qp = 0

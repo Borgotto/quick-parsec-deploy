@@ -1,0 +1,4 @@
+app_host = 0
+client_decoder_h265 = true
+client_immersive = 1
+client_overlay = 0
