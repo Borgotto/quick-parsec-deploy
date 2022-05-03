@@ -10,20 +10,17 @@ It's a simple Windows PowerShell script to download and run the latest portable 
 ### usage:
 clone this repository, open it in PowerShell (5.1 or greater), and run
 ```powershell
-.\main.ps1
+main.ps1 [[-ConfigFile] <string>] [[-LoginFile] <string>] [[-Dir] <string>] [[-OutFolder] <string>]
 ```
 
 - #### optional parameters 
 ```powershell
-# parameters:
-#    ConfigFile - text file containing "Advanced Configuration Options" to add to config.txt
-#    LoginFile - bin file containing Parsec user login token to autologin
-#    Dir - location where program files should be extracted to
-#    OutFolder - name of folder to be created in the directory
-
-.\main.ps1 [-Params <string[]>]
+# ConfigFile - text file containing "Advanced Configuration Options" to add to config.txt
+# LoginFile - bin file containing Parsec user login token to autologin
+# Dir - location where program files should be extracted to
+# OutFolder - name of folder to be created in the directory
 ```
-each parameter can be more easily called with its initial letter `[ -C | -L | -D | -O ]`
+parameters can be more easily called with its initial letter `[ -C | -L | -D | -O ]`
 ##
 
 
