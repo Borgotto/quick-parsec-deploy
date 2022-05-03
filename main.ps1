@@ -1,13 +1,34 @@
-# clean previous files if needed
-Remove-Item .\parsec.zip -ErrorAction Ignore -Force
-Remove-Item .\parsec -Force -Recurse -ErrorAction Ignore
+# parameters:
+#    ConfigFile - text file containing "Advanced Configuration Options" to add to config.txt
+#    LoginFile - bin file containing Parsec user login token to autologin
+#    Dir - location where program files should be extracted to
+#    OutFolder - name of folder to be created in the directory
+param(
+    [string]$ConfigFile = "",
+    [string]$LoginFile = "",
+    [string]$Dir = ".",
+    [string]$OutFolder = "parsec-flat-windows32"
+)
+
+# create directory and folder
+New-Item "$Dir\$OutFolder" -ItemType Directory -Force | Out-Null
 
 # download the latest build of the portable version (32 bit) of parsec
-Invoke-WebRequest https://builds.parsecgaming.com/package/parsec-flat-windows32.zip -OutFile .\parsec.zip
+Invoke-WebRequest "https://builds.parsecgaming.com/package/parsec-flat-windows32.zip" -OutFile "$Dir\$OutFolder\$OutFolder.zip"
 
-# extract the downloaded zip and then delete it
-Expand-Archive .\parsec.zip .\parsec
-Remove-Item .\parsec.zip
+# extract the downloaded zip and then remove it
+Expand-Archive "$Dir\$OutFolder\$OutFolder.zip" "$Dir\$OutFolder" -Force
+Remove-Item "$Dir\$OutFolder\$OutFolder.zip" -Force
+
+# check if a config file is passed, if so then append its settings to config.txt
+if ($ConfigFile -and (Test-Path "$ConfigFile")){
+    Get-Content "$ConfigFile" | Add-Content "$Dir\$OutFolder\config.txt"
+}
+
+# check if a user login file is passed, if so copy it to user.bin
+if ($LoginFile -and (Test-Path "$LoginFile")){
+    Copy-Item "$LoginFile" -Destination "$Dir\$OutFolder\user.bin" -Force
+}
 
 # run parsec
-Start-Process parsecd.exe -WorkingDirectory .\parsec
+Start-Process parsecd.exe -WorkingDirectory "$Dir\$OutFolder"
