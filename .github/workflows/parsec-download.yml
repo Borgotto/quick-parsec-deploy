@@ -1,0 +1,14 @@
+name: Parsec download 
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  parsec-flat-windows32:
+    runs-on: windows-latest
+    steps:
+      - name: Download Parsec
+        shell: pwsh
+        run: Invoke-WebRequest "https://builds.parsecgaming.com/package/parsec-flat-windows32.zip" -OutFile test.zip

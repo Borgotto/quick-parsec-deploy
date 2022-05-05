@@ -1,0 +1,16 @@
+name: Powershell 5.1 
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  Powershell-5:
+    runs-on: windows-latest
+    steps:
+      - name: Run the main script
+        shell: pwsh
+        run: iex(irm https://raw.githubusercontent.com/Borgotto/quick-parsec-deploy/main/qpd.ps1)
