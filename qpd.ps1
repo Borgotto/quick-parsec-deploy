@@ -4,7 +4,7 @@
 #    OutFolder - name of folder to be created in the directory
 param(
     [string]$ConfigFile = "",
-    [string]$Dir = ".",
+    [string]$Dir = "$HOME",
     [string]$OutFolder = "parsec-flat-windows32"
 )
 
