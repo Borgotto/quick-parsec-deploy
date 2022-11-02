@@ -12,17 +12,16 @@ A simple Windows PowerShell script to download, configure and run the latest por
 ### usage:
 clone this repository, open PowerShell (5.1 or greater), and run
 ```powershell
-qpd.ps1 [[-ConfigFile] <string>] [[-LoginFile] <string>] [[-Dir] <string>] [[-OutFolder] <string>]
+qpd.ps1 [[-ConfigFile] <string>] [[-Dir] <string>] [[-OutFolder] <string>]
 ```
 
 - #### optional parameters
 ```powershell
 # ConfigFile - text file containing "Advanced Configuration Options" to add to config.txt
-# LoginFile - bin file containing Parsec user login token to autologin
 # Dir - location where program files should be extracted to
 # OutFolder - name of folder to be created in the directory
 ```
-parameters can be more easily called with its initial letter `[ -C | -L | -D | -O ]`
+parameters can be more easily called with its initial letter `[ -C | -D | -O ]`
 ##
 
 
