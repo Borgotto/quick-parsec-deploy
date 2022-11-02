@@ -6,26 +6,31 @@
 A simple Windows PowerShell script to download, configure and run the latest portable version of
 <a href="https://parsec.app/downloads">Parsec <img src="https://imgur.com/3QEwVvy.png" width=20 height=20></a>
  on any Windows 10/11 computer with a single command
- ##
 
+##
 
-### usage:
-clone this repository, open PowerShell (5.1 or greater), and run
+### Method 1: PowerShell
+simply copy this command and paste it in PowerShell
+```powershell
+irm raw.githubusercontent.com/Borgotto/quick-parsec-deploy/main/qpd.ps1 | iex
+```
+
+### Method 2: Download and run the script
+clone this repository, run qpd.ps1
 ```powershell
 qpd.ps1 [[-ConfigFile] <string>] [[-Dir] <string>] [[-OutFolder] <string>]
 ```
-
-- #### optional parameters
+#### optional parameters:
 ```powershell
 # ConfigFile - text file containing "Advanced Configuration Options" to add to config.txt
 # Dir - location where program files should be extracted to
 # OutFolder - name of folder to be created in the directory
 ```
 parameters can be more easily called with its initial letter `[ -C | -D | -O ]`
+
 ##
 
-
-### examples:
+### Examples:
 - #### set initial state of Parsec's [config.txt](https://support.parsec.app/hc/en-us/articles/360003145951-Accessing-Your-Advanced-Settings) file by passing your own (see [All Advanced Configuration Options](https://support.parsec.app/hc/en-us/articles/360001562772-All-Advanced-Configuration-Options))
 ```powershell
 PS C:\Users\Borgo> .\qpd.ps1 -ConfigFile .\client_config.txt
