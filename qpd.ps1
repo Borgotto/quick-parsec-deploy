@@ -1,11 +1,9 @@
 # parameters:
 #    ConfigFile - text file containing "Advanced Configuration Options" to add to config.txt
-#    LoginFile - bin file containing Parsec user login token to autologin
 #    Dir - location where program files should be extracted to
 #    OutFolder - name of folder to be created in the directory
 param(
     [string]$ConfigFile = "",
-    [string]$LoginFile = "",
     [string]$Dir = ".",
     [string]$OutFolder = "parsec-flat-windows32"
 )
@@ -23,11 +21,6 @@ Remove-Item "$Dir\$OutFolder\$OutFolder.zip" -Force
 # check if a config file is passed, if so then append its settings to config.txt
 if ($ConfigFile -and (Test-Path "$ConfigFile")){
     Get-Content "$ConfigFile" | Add-Content "$Dir\$OutFolder\config.txt"
-}
-
-# check if a user login file is passed, if so copy it to user.bin
-if ($LoginFile -and (Test-Path "$LoginFile")){
-    Copy-Item "$LoginFile" -Destination "$Dir\$OutFolder\user.bin" -Force
 }
 
 # run parsec

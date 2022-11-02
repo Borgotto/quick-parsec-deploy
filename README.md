@@ -15,7 +15,7 @@ clone this repository, open PowerShell (5.1 or greater), and run
 qpd.ps1 [[-ConfigFile] <string>] [[-LoginFile] <string>] [[-Dir] <string>] [[-OutFolder] <string>]
 ```
 
-- #### optional parameters 
+- #### optional parameters
 ```powershell
 # ConfigFile - text file containing "Advanced Configuration Options" to add to config.txt
 # LoginFile - bin file containing Parsec user login token to autologin
@@ -42,20 +42,10 @@ client_overlay = 0
 ```
 ##
 
-- #### set autologin at first boot, you need to provide a valid `user.bin` file taken from a Parsec installation where you've already loggen in
-```powershell
-PS C:\Users\Borgo> .\qpd.ps1 -LoginFile "token.bin"
-```
-where `token.bin` was taken previously with:
-```powershell
-PS C:\Users\Borgo> Copy-Item "C:\ProgramData\Parsec\user.bin" .
-```
-##
-
 - #### choose where to save Parsec's folder
 ```powershell
 PS C:\Users\Borgo> .\qpd.ps1 -Dir "~\Desktop"
-# or 
+# or
 PS C:\Users\Borgo> .\qpd.ps1 -D ".\remote"
 # both are valid
 ```
