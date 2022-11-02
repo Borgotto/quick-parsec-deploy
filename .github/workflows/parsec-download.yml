@@ -1,4 +1,4 @@
-name: Parsec download 
+name: Parsec download
 
 on:
   schedule:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Download Parsec
         shell: pwsh
-        run: Invoke-WebRequest "https://builds.parsecgaming.com/package/parsec-flat-windows32.zip" -OutFile test.zip
+        run: Invoke-WebRequest "https://builds.parsecgaming.com/package/parsec-flat-windows.zip" -OutFile test.zip

@@ -1,4 +1,4 @@
-name: Powershell 5.1 
+name: Powershell 5.1
 
 on:
   push:
