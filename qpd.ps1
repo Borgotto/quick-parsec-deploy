@@ -12,7 +12,7 @@ param(
 New-Item "$Dir\$OutFolder" -ItemType Directory -Force | Out-Null
 
 # download the latest build of the portable version (32 bit) of parsec
-Invoke-WebRequest "https://builds.parsecgaming.com/package/parsec-flat-windows32.zip" -OutFile "$Dir\$OutFolder\$OutFolder.zip"
+Invoke-WebRequest "https://builds.parsecgaming.com/package/parsec-flat-windows.zip" -OutFile "$Dir\$OutFolder\$OutFolder.zip"
 
 # extract the downloaded zip and then remove it
 Expand-Archive "$Dir\$OutFolder\$OutFolder.zip" "$Dir\$OutFolder" -Force
