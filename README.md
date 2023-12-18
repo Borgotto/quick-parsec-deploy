@@ -1,7 +1,7 @@
 # quick-parsec-deploy
 
-[![Powershell 5.1](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/powershell-test.yml/badge.svg?branch=main)](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/powershell-test.yml)&nbsp;
-[![Parsec download](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/parsec-download.yml/badge.svg?branch=main)](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/parsec-download.yml)
+[![Powershell 5.1](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/powershell-test.yml/badge.svg)](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/powershell-test.yml)&nbsp;
+[![Parsec download](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/parsec-download.yml/badge.svg)](https://github.com/Borgotto/quick-parsec-deploy/actions/workflows/parsec-download.yml)
 
 A simple Windows PowerShell script to download, configure and run the latest portable version of
 <a href="https://parsec.app/downloads">Parsec <img src="https://imgur.com/3QEwVvy.png" width=20 height=20></a>
